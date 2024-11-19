@@ -1,0 +1,53 @@
+Assignment 1: Design Your Own Class! 🏗️
+Create a class representing anything you like (a Smartphone, Book, or even a Superhero!).
+Add attributes and methods to bring the class to life!
+Use constructors to initialize each object with unique values.
+Add an inheritance layer to explore polymorphism or encapsulation.
+
+
+
+
+class Superhero:
+    def __init__(self, name, power, health):
+        self.__name = name  
+        self.__power = power 
+        self.__health = health 
+
+    def get_name(self):
+        return self.__name
+
+    def set_power(self, power):
+        self.__power = power
+
+    def action(self):
+        return f"{self.__name} uses {self.__power} to fight villains!"
+
+    def display_stats(self):
+        return f"Superhero: {self.__name}, Power: {self.__power}, Health: {self.__health}"
+
+class FlyingSuperhero(Superhero):
+    def __init__(self, name, power, health, flight_speed):
+        super().__init__(name, power, health)
+        self.__flight_speed = flight_speed
+  
+    def action(self):
+        return f"{self.get_name()} flies through the sky at {self.__flight_speed} km/h while using {self._Superhero__power} to fight!"
+
+    def display_stats(self):
+        return f"{super().display_stats()} | Flight Speed: {self.__flight_speed} km/h"
+
+    def get_flight_speed(self):
+        return self.__flight_speed
+
+hero1 = Superhero("Captain Code", "Laser Vision", 100)
+
+hero2 = FlyingSuperhero("Skyhawk", "Wind Manipulation", 120, 200)
+
+print(hero1.display_stats())
+print(hero1.action())
+
+print(hero2.display_stats()) 
+print(hero2.action()) 
+
+hero1.set_power("Super Strength")
+print(hero1.action())

@@ -1,0 +1,34 @@
+Activity 2: Polymorphism Challenge! 🎭
+Create a program that includes animals or vehicles with the same action (like move()).
+However, make each class define move() differently (for example, Car.move() prints "Driving" 🚗, while Plane.move() prints "Flying" ✈️).
+
+
+class Vehicle:
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+class Car(Vehicle):
+    def move(self):
+        return "Driving 🚗"
+
+class Plane(Vehicle):
+    def move(self):
+        return "Flying ✈️"
+
+class Boat(Vehicle):
+    def move(self):
+        return "Sailing ⛵"
+
+class Bicycle(Vehicle):
+    def move(self):
+        return "Pedaling 🚲"
+
+car = Car()
+plane = Plane()
+boat = Boat()
+bicycle = Bicycle()
+
+vehicles = [car, plane, boat, bicycle]
+
+for vehicle in vehicles:
+    print(vehicle.move())
